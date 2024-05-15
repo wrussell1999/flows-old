@@ -1,0 +1,10 @@
+id: second-flow
+namespace: 4q7ogjpeqgcnhgt94xhmcq.sub-namespace
+tasks:
+  - id: my-task
+    type: io.kestra.core.tasks.log.Log
+    message: Hello from my-task
+  - id: subflow
+    type: io.kestra.core.tasks.flows.Subflow
+    namespace: 4q7ogjpeqgcnhgt94xhmcq.sub-namespace.sub-namespace
+    flowId: another-flow
